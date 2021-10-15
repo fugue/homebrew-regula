@@ -5,20 +5,20 @@
 class Regula < Formula
   desc "Evaluate infrastructure as code for security and compliance"
   homepage "https://regula.dev"
-  version "1.5.0"
+  version "1.6.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/fugue/regula/releases/download/v1.5.0/regula_1.5.0_macOS_x86_64.tar.gz"
-    sha256 "27f97c526dbe35876dc052c70dc500981ba6842d546948be8a5dadaeed69ad10"
+    url "https://github.com/fugue/regula/releases/download/v1.6.0/regula_1.6.0_macOS_x86_64.tar.gz"
+    sha256 "f296537b0be653fd4d2437d68b7ce37e9c911b6b241fde0707acc503d731afb6"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/fugue/regula/releases/download/v1.5.0/regula_1.5.0_Linux_x86_64.tar.gz"
-    sha256 "565a57f839eb14931f64ff5f0f1268c9eeda71c42f08c88138e420fc385f9d29"
+    url "https://github.com/fugue/regula/releases/download/v1.6.0/regula_1.6.0_Linux_x86_64.tar.gz"
+    sha256 "65538cc91eab030ece158805526fed6cf686b25820ccfd19d5b7e18a1ac45b92"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/fugue/regula/releases/download/v1.5.0/regula_1.5.0_Linux_arm64.tar.gz"
-    sha256 "2aa6343e78af3ad5a3f22fe459f5cb34e39b6beb3acf14f0453c45aaab08297a"
+    url "https://github.com/fugue/regula/releases/download/v1.6.0/regula_1.6.0_Linux_arm64.tar.gz"
+    sha256 "b6a2fb72d5e65d390c4903ede69d7b364eab087b064ae8a07abdeb5b63d2bd4b"
   end
 
   def install
