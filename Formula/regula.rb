@@ -5,20 +5,20 @@
 class Regula < Formula
   desc "Evaluate infrastructure as code for security and compliance"
   homepage "https://regula.dev"
-  version "2.7.0"
+  version "2.8.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/fugue/regula/releases/download/v2.7.0/regula_2.7.0_macOS_x86_64.tar.gz"
-      sha256 "e788a5506ecff3d3aff0ada17445f21401d0cda37b3c07d11f1ff8f5cc684096"
+      url "https://github.com/fugue/regula/releases/download/v2.8.0/regula_2.8.0_macOS_x86_64.tar.gz"
+      sha256 "26b6352e6f1098940b28c60c0034d038e037675a09176a0f1f4cf40e8133ec0d"
 
       def install
         bin.install "regula"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/fugue/regula/releases/download/v2.7.0/regula_2.7.0_macOS_arm64.tar.gz"
-      sha256 "5866f2c091615d569b9ffa2a1e14d5b5db2782a9213bc7c29172a70ce9a404c7"
+      url "https://github.com/fugue/regula/releases/download/v2.8.0/regula_2.8.0_macOS_arm64.tar.gz"
+      sha256 "ea0df8e473a12d20f535cddfa78cb7ba84fdb11066da5fd39791bdecd5464e58"
 
       def install
         bin.install "regula"
@@ -27,17 +27,17 @@ class Regula < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/fugue/regula/releases/download/v2.7.0/regula_2.7.0_Linux_x86_64.tar.gz"
-      sha256 "50134298bf685bdafc6a89b503ea49b2b1660309188a759ad5aede92af2b3a83"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/fugue/regula/releases/download/v2.8.0/regula_2.8.0_Linux_arm64.tar.gz"
+      sha256 "37546b02bc0eb4df7755dd6556680dbaeb41f811f7cf8230f7e071b14abd0b46"
 
       def install
         bin.install "regula"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fugue/regula/releases/download/v2.7.0/regula_2.7.0_Linux_arm64.tar.gz"
-      sha256 "63e086260bb7862610be628b042a2ba35ca5eecd0ddde1ce603e98e09643977f"
+    if Hardware::CPU.intel?
+      url "https://github.com/fugue/regula/releases/download/v2.8.0/regula_2.8.0_Linux_x86_64.tar.gz"
+      sha256 "7fc6a0b3c2496b3641c0d36cee1be9b865ceb47bfe94c9dd1e6d1cbc6385b111"
 
       def install
         bin.install "regula"
