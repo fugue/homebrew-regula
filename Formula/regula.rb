@@ -5,20 +5,20 @@
 class Regula < Formula
   desc "Evaluate infrastructure as code for security and compliance"
   homepage "https://regula.dev"
-  version "2.8.1"
+  version "2.9.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/fugue/regula/releases/download/v2.8.1/regula_2.8.1_macOS_x86_64.tar.gz"
-      sha256 "1e0247119e7229b373270db4d32c03ddbe2ca408f27eee7cc0c184bd1c4e2fb4"
+    if Hardware::CPU.arm?
+      url "https://github.com/fugue/regula/releases/download/v2.9.0/regula_2.9.0_macOS_arm64.tar.gz"
+      sha256 "1ceb9f5cd65be89861f7d94dbaa2fa4a88bee976ba408f943c5caea91279beb2"
 
       def install
         bin.install "regula"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/fugue/regula/releases/download/v2.8.1/regula_2.8.1_macOS_arm64.tar.gz"
-      sha256 "d8a1993e01d5dc2038bef737e4ceb1daaa8b82a3a12ff2cd8051059e4958a7f7"
+    if Hardware::CPU.intel?
+      url "https://github.com/fugue/regula/releases/download/v2.9.0/regula_2.9.0_macOS_x86_64.tar.gz"
+      sha256 "59d0f80b9cf295450c688a97a100c3a9e557c34606673dcc870fbf426ed0dbaa"
 
       def install
         bin.install "regula"
@@ -27,17 +27,17 @@ class Regula < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fugue/regula/releases/download/v2.8.1/regula_2.8.1_Linux_arm64.tar.gz"
-      sha256 "1c1bc24eb0a6ba9909e030d1b9552a78e07aa1f96060eb7eb8084f0c86d7e27d"
+    if Hardware::CPU.intel?
+      url "https://github.com/fugue/regula/releases/download/v2.9.0/regula_2.9.0_Linux_x86_64.tar.gz"
+      sha256 "f10cd32e4947a8a5d06e8e30ce489975fe8d652671c3445f300061e785c8f9a9"
 
       def install
         bin.install "regula"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/fugue/regula/releases/download/v2.8.1/regula_2.8.1_Linux_x86_64.tar.gz"
-      sha256 "72bf9520711787a65c655e4b107478bfc2fc41135f6f222cf966b2df22d99753"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/fugue/regula/releases/download/v2.9.0/regula_2.9.0_Linux_arm64.tar.gz"
+      sha256 "8d0dad911cd3c7f6bc49e263b94c8d43cc9fcea81b8a36331d495cbc904dc751"
 
       def install
         bin.install "regula"
