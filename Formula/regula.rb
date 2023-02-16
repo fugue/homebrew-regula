@@ -5,20 +5,20 @@
 class Regula < Formula
   desc "Evaluate infrastructure as code for security and compliance"
   homepage "https://regula.dev"
-  version "3.2.0"
+  version "3.2.1"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/fugue/regula/releases/download/v3.2.0/regula_3.2.0_macOS_arm64.tar.gz"
-      sha256 "fd3cfc55271aab63a7c35ee76b277ce57beef1e306fc178ba3f9169a9a2641fb"
+    if Hardware::CPU.intel?
+      url "https://github.com/fugue/regula/releases/download/v3.2.1/regula_3.2.1_macOS_x86_64.tar.gz"
+      sha256 "fd51cd45219de3388742d69035c665f73684f21885521601276ea4c9aca9dfc0"
 
       def install
         bin.install "regula"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/fugue/regula/releases/download/v3.2.0/regula_3.2.0_macOS_x86_64.tar.gz"
-      sha256 "0a687640037929dd63a182ecca43a0e88138122e037461e9523b9060afc38002"
+    if Hardware::CPU.arm?
+      url "https://github.com/fugue/regula/releases/download/v3.2.1/regula_3.2.1_macOS_arm64.tar.gz"
+      sha256 "7093023566d05e2a9495a19e68d7c02c8ca6e3748e565cc756453e74b90ef775"
 
       def install
         bin.install "regula"
@@ -28,16 +28,16 @@ class Regula < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/fugue/regula/releases/download/v3.2.0/regula_3.2.0_Linux_arm64.tar.gz"
-      sha256 "7c67e8ad5600d633480fcf922bf37a5f987a3caa55147233f134b43d936452bc"
+      url "https://github.com/fugue/regula/releases/download/v3.2.1/regula_3.2.1_Linux_arm64.tar.gz"
+      sha256 "7116d93cfea46bc461a2c55fddef8ff6d5bdda57492122213afed88b70d3b650"
 
       def install
         bin.install "regula"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/fugue/regula/releases/download/v3.2.0/regula_3.2.0_Linux_x86_64.tar.gz"
-      sha256 "df9ff96096865e1d40f3e939db24dbcff1f29c6db95250e3262de7ed0cf7529e"
+      url "https://github.com/fugue/regula/releases/download/v3.2.1/regula_3.2.1_Linux_x86_64.tar.gz"
+      sha256 "2f864b9fe7acb5ee56f2cf270901e6d5fd170db5ed8814185fc32bfe97e5697d"
 
       def install
         bin.install "regula"
